@@ -31,7 +31,6 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
 ]
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -81,9 +80,13 @@ WSGI_APPLICATION = 'task_manager.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    'default':{
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('railway'),
+        'USER': os.getenv('postgres'),
+        'PASSWORD': os.getenv('IEADoKtRksJrcPKHfXBawhAHLhQvuVZm'),
+        'HOST': os.getenv('postgres.railway.internal'),
+        'PORT': os.getenv('5432'),
     }
 }
 if 'DATABASE_URL' in os.environ:
