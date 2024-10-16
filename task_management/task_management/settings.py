@@ -14,6 +14,7 @@ import dj_database_url
 from pathlib import Path
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,7 +28,9 @@ SECRET_KEY = 'django-insecure-e!7p@2+#2*%3bimee8%lftf_oh$kajc2)$4fjri3wn3n#lkco(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['task_management.railway.app']
+ALLOWED_HOSTS = ['task-manager-final-project-ten.vercel.app',
+                'localhost',  # For local development
+                '127.0.0.1',]
 
 
 # Application definition
