@@ -1,3 +1,15 @@
+<<<<<<< HEAD
 [build]
   publish = "path/to/static/files"
   command = "python manage.py collectstatic --noinput"
+=======
+[build]
+  publish = "path/to/static/files"
+  command = "python manage.py collectstatic --noinput"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true
+
+>>>>>>> a48dd2a74cdbf1f02b26b7db5e1cd65a010f1939
