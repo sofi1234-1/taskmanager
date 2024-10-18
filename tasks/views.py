@@ -1,9 +1,12 @@
+
 from rest_framework import serializers, viewsets
 from rest_framework.permissions import IsAuthenticated
-from . import models
-from .import serializers,  TaskSerializer, Task
+from .models import Task
+from .serializers import TaskSerializer
+
 from django.http import JsonResponse
 from django.views.decorators.http import require_GET
+
 from rest_framework import generics, permissions, status, views
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -11,6 +14,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.authtoken.models import Token
 from rest_framework.authtoken.views import ObtainAuthToken
+from .models import Task
 from django.contrib.auth.models import User
 from django.http import JsonResponse
 from django.views.decorators.http import require_GET
@@ -157,3 +161,4 @@ class TaskViewSet(viewsets.ModelViewSet):
             raise serializers.ValidationError("Cannot edit a completed task.")
         serializer.save()
 
+    
