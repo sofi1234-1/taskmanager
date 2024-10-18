@@ -7,6 +7,5 @@ router.register(r'tasks', TaskViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('api/', include(router.urls)), 
 ]
 #python manage.py migrate
