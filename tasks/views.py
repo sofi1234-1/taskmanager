@@ -1,12 +1,12 @@
-<<<<<<< HEAD
+
 from rest_framework import serializers, viewsets
 from rest_framework.permissions import IsAuthenticated
 from .models import Task
 from .serializers import TaskSerializer
-from .serializers import TaskSerializer
+
 from django.http import JsonResponse
 from django.views.decorators.http import require_GET
-=======
+
 from rest_framework import generics, permissions, status, views
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -131,7 +131,7 @@ class CustomAuthToken(ObtainAuthToken):
       'refresh': str(refresh),
       'user': UserSerializer(user).data
     })
->>>>>>> origin/main
+
 @require_GET
 def api_root(request):
     return JsonResponse({
@@ -142,7 +142,7 @@ def api_root(request):
             "/api/auth/token/",
             "/api/auth/token/refresh/"
         ]
-<<<<<<< HEAD
+
     })
 
 class TaskViewSet(viewsets.ModelViewSet):
@@ -160,6 +160,5 @@ class TaskViewSet(viewsets.ModelViewSet):
         if task.status == 'Completed':
             raise serializers.ValidationError("Cannot edit a completed task.")
         serializer.save()
-=======
+
     })
->>>>>>> origin/main
