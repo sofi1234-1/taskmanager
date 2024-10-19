@@ -19,7 +19,7 @@ from django.urls import path, include
 from tasks.views import api_root # Import the new view
 from rest_framework_simplejwt.views import TokenObtainPairView
 urlpatterns = [
-    path('', api_root, name='api-root'),  # Add this line
+    path('', api_root, name='api-root'),  
     path('admin/', admin.site.urls),
     path('api/', include('tasks.urls')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
